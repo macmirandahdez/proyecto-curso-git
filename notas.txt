@@ -1,0 +1,166 @@
+
+Uso de Git
+
+-- Inicia la configuración global
+git config --global user.name "devPruebas"
+
+-- Esta es la cuenta de Github para enlazar a GitHub
+git config --global user.email mac.miranda.hdez@gmail.com
+
+-- Esta isntrucción indica el uso de el editor en el que se conectara:
+git config --global core.editor "code --wait"
+
+--Abrir archivo de configuración parsa validar
+
+git config --global -e
+
+-- Configurar el salto de linea al manejarse en windows
+-- git determina como manejar el salto de linea
+git config --global core.autocrlf input true
+
+-- En caso de error reemplazar el código anterior:
+git config --global --replace-all core.autocrlf true
+
+-- nos muestra la lista de opciones que tiene git desde terminal
+git config --global -h
+
+--Configutracion desde terminal
+git config --global -list
+
+-- ver una lista
+ls
+
+-- ubicarse en una carpeta
+cd carpeta
+
+-- ver en que carpeta estoy
+pwd
+
+--crear una carpeta
+mkdir
+--Remover carpeta
+rmdir
+-- Crera un proyecto nuevo git
+git init
+
+-- verificar que se creo (ya que está oculto) 
+ls -a
+
+--Abrir Visual Studio con git
+code .
+
+-- Ctrl + ñ  : Se abre terminal
+
+-------------------------------
+Flujo de Git
+
+Untracked: Significa que no sea marcado cierto archivo para subirse
+
+Local: Si Marcar
+EN este momento no s eha hehcos cambios
+
+        ---> Usa git add
+
+Stage: Marcados
+En este momento Git ya sabe que se empiezan a hacer modificaciones
+
+        ---> Usa git commit
+
+Comit: Fotografiados
+Toma el momento de los cambios
+
+        ---> Usa git push
+
+Remote: En el servidor
+Al momento de dar push se actualiza a la última versión
+
+
+Para cambio de un estado STAGE se debe colocar:
+GIT ADD archivoACambiarDeEstado  
+
+--determina el estado actual del proyecto 
+git status 
+
+para pasar de STAGE a UNTRACKED
+
+git rm --cached <file>
+
+
+-- Para tomar una snapshot de los cambios
+Se realiza 
+
+git commit -m "Descripcion_De_Cambio"
+
+--Para restaurar un archivo como el último commit
+
+git restore <archivo>
+
+Se ´puede crear un archivo .gitignore para colocar 
+que archivo o carpeta será ignorado
+
+Se agrega dentro del archivo los datos a ignorar
+ Y se agrega con un .git add .gitignore
+
+ y se agrega un git commit -m "Se agrega GitIgnore"
+
+ ---- Este comando nos deja ver la difernecia entre
+ un archivo actual y después
+ git DIFF  
+
+-- Forma corta para checar el status de git
+git status -s
+
+-- Forma de ver los commits
+git log  
+
+--Forma de ver los commit en una sola linea cada uno
+git log --oneline
+
+-- Ramas
+-- Nos dice en que rama nos encontramos
+
+git branch
+
+-- Crear rama alternativa
+--  (checkout) => cambio ,  (-b) de rama 
+git checkout -b <nombre_de_rama>
+
+
+-- cambiar a rama master
+git checkout master
+
+-- Para pasar el cambio de una rama a la master (Hacer un merge)
+
+git merge ramaNueva
+
+---------------- GIT EN VS
+
+Extensiones
+Plugin Git Graph de mhutchie
+
+
+--------Git Remote y Git origin
+Estos comandos son para cocenctar de forma remota nuestro repositorio
+
+echo "# proyecto-curso-git" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/macmirandahdez/proyecto-curso-git.git
+git push -u origin main    ---> En este caso se usa la rama master porque es en la que nos ubicamos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
